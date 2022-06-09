@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -35,4 +37,64 @@
     </body>
 </body>
 
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+	<body>
+		<div class="join-container">
+			<header class="join-header">
+				<h1><i class="titulo"></i> Whassup!</h1>
+			</header>
+			<main class="join-main">
+				<form action="chat.html">
+					<div class="form-control">
+						<label for="username">Usuario</label>
+						<input
+							type="text"
+							name="username"
+							id="username"
+							placeholder="Entra un usuario..."
+							required
+						/>
+					</div>
+
+                    <div class="form-control">
+						<label for="password">Contraseña</label>
+						<input
+							type="text"
+							name="password"
+							id="password"
+							placeholder="Entra una contraseña..."
+							required
+						/>
+					</div>
+
+					<div class="form-control">
+						<label for="room">Room</label>
+						<select name="room" id="room">
+							<option value="Sala 1">Sala 1</option>
+							<option value="Sala 2">Sala 2</option>
+							<option value="Sala 3">Sala 3</option>
+							<option value="Sala 4">Sala 4</option>
+							<option value="Sala 5">Sala 5</option>
+							<option value="Sala 6">Sala 6</option>
+						</select>
+					</div>
+					<button type="submit" class="btn">Unirse al chat</button>
+				</form>
+                <p class="href"><a href="./register.html">¿No tienes usuario? ¡Registrate!</a></p>
+			</main>
+		</div>
+        <script type="text/javascript" src="../Js/loginscript.js"></script>
+	</body>
 </html>
