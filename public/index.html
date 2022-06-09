@@ -1,59 +1,38 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/style.css">
-  <title>Whassup!</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
+
 <body>
-  <div class="chat-container">
-    <header class="chat-header">
-      <h1><i class="fas fa-smile"></i> Whassup!</h1>
-      <a href="index.html" class="btn">Abandonar Sala</a>
-    </header>
-    <main class="chat-main">
-      <div class="chat-sidebar">
-        <h3><i class="fas fa-comments"></i> Salas:</h3>
-        <h2 id="room-name">Sala 1</h2>
-        <h3><i class="fas fa-users"></i> Usuarios</h3>
-        <ul id="users">
-          <li>Diego</li>
-          <li>Alfonso</li>
-          <li>Robert</li>
-          <li>Marga</li>
-          <li>David</li>
-        </ul>
-      </div>
-      <div class="chat-messages">
-					<div class="message">
-						<p class="meta">Diego <span>9:12pm</span></p>
-						<p class="text">
-							Texto de ejemplo que va a enviar Diego a su compañero para probar la aplicación
-						</p>
-					</div>
-					<div class="message">
-						<p class="meta">Alfonso <span>9:15pm</span></p>
-						<p class="text">
-							Texto de ejemplo que va a enviar Alfonso a su compañero para comunicar que la aplicación fue un exito
-						</p>
-					</div>
-      </div>
-    </main>
-    <div class="chat-form-container">
-      <form id="chat-form">
-        <input
-          id="msg"
-          type="text"
-          placeholder="Enter Message"
-          required
-          autocomplete="off"
-        />
-        <button class="btn"><i class="fas fa-paper-plane"></i> Enviar</button>
-      </form>
-    </div>
-  </div>
-  <script src="/socket.io/socket.io.js"></script>
-  <script src="js/main.js"></script>
+
+    <body class="cajas">
+        <div class="cabecero">
+            <h1 class="titulo">Wassup</h1>
+            <h4>(login)</h4>
+        </div>
+        <div class="base">
+            <h3>Identificate</h3>
+            <form action="/action_page.php">
+                <label for="nombre">Nombre</label><br>
+                <input type="text" id="nombre" name="nombre"><br><br>
+
+                <label for="apellido">Apellido</label><br>
+                <input type="text" id="apellido" name="apellido"><br><br>
+
+            </form>
+
+            <a href="./chat.html"><button id="erase-task">login</button></a>
+            <hr>
+            <a href="./register.html">¿No tienes usuario? ¡Registrate!</a>
+        </div>
+        <script type="text/javascript" src="../Js/loginscript.js"></script>
+    </body>
 </body>
+
 </html>
