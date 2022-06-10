@@ -2,66 +2,66 @@ const path = require('path');
 const http = require('http');
 const express = require('express');
 const socketio = require('socket.io');
-const formatMessage = require('./utils/messages');
+const formatMessage = require('./funciones/messages');
 const {
   userJoin,
   getCurrentUser,
   userLeave,
   getRoomUsers
-} = require('./utils/users');
+} = require('./funciones/users');
 
 const app = express();
 const server = http.createServer(app);
 const io = socketio(server);
 
-// Set static folder
+// static folder (path)
 app.use(express.static(path.join(__dirname, 'public')));
 
-const botName = 'ChatCord Bot';
+const botName = 'Whasuup BOT ';
 
-// Run when client connects
+// Ejecuta cuando cliente se conecte
 io.on('connection', socket => {
   socket.on('joinRoom', ({ username, room }) => {
     const user = userJoin(socket.id, username, room);
 
     socket.join(user.room);
 
-    // Welcome current user
-    socket.emit('message', formatMessage(botName, 'Welcome to ChatCord!'));
+    // Bienvenida usuario
+    socket.emit('message', formatMessage(botName, 'Bienvenido a Whassup!'));
 
-    // Broadcast when a user connects
+    // Broadcast cuando usuario conecta
     socket.broadcast
       .to(user.room)
       .emit(
         'message',
-        formatMessage(botName, `${user.username} has joined the chat`)
+        formatMessage(botName, `${user.username} se ha unido al chat`)
       );
 
-    // Send users and room info
+    // Envia informacion del usuario y la sala
     io.to(user.room).emit('roomUsers', {
       room: user.room,
       users: getRoomUsers(user.room)
     });
   });
 
-  // Listen for chatMessage
+  // Listener para chatMessage
   socket.on('chatMessage', msg => {
     const user = getCurrentUser(socket.id);
 
     io.to(user.room).emit('message', formatMessage(user.username, msg));
   });
 
-  // Runs when client disconnects
+  // Ejecuta cuando cliente desconecta
   socket.on('disconnect', () => {
     const user = userLeave(socket.id);
 
     if (user) {
       io.to(user.room).emit(
         'message',
-        formatMessage(botName, `${user.username} has left the chat`)
+        formatMessage(botName, `${user.username} ha abandonado el chat`)
       );
 
-      // Send users and room info
+      // envia informacion usuario y sala
       io.to(user.room).emit('roomUsers', {
         room: user.room,
         users: getRoomUsers(user.room)

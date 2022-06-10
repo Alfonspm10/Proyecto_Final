@@ -3,6 +3,10 @@ const chatMessages = document.querySelector('.chat-messages');
 const roomName = document.getElementById('room-name');
 const userList = document.getElementById('users');
 
+// Get user y sala de URL (QS implementación)
+const { username, room } = Qs.parse(location.search, {
+  ignoreQueryPrefix: true,
+});
 
 const socket = io();
 
@@ -37,7 +41,7 @@ chatForm.addEventListener('submit', (e) => {
     return false;
   }
 
-  // emit(socker) en el server
+  // emit(socket) en el server
   socket.emit('chatMessage', msg);
 
   // clear 
@@ -58,6 +62,7 @@ function outputMessage(message) {
   para.classList.add('text');
   para.innerText = message.text;
   div.appendChild(para);
+  //query selector cuidado a fallos
   document.querySelector('.chat-messages').appendChild(div);
 }
 
@@ -65,4 +70,22 @@ function outputMessage(message) {
 function outputRoomName(room) {
   roomName.innerText = room;
 }
-;
+
+// añadir users al DOM
+function outputUsers(users) {
+  userList.innerHTML = '';
+  users.forEach((user) => {
+    const li = document.createElement('li');
+    li.innerText = user.username;
+    userList.appendChild(li);
+  });
+}
+
+//warning abandono de chat(arreglar ruta index)
+document.getElementById('leave-btn').addEventListener('click', () => {
+  const leaveRoom = confirm('Are you sure you want to leave the chatroom?');
+  if (leaveRoom) {
+    window.location = '../index.html';
+  } else {
+  }
+});
