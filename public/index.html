@@ -1,59 +1,23 @@
 
-
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="../css/style.css">
-</head>
-
-<body>
-
-    <body class="cajas">
-        <div class="cabecero">
-            <h1 class="titulo">Wassup</h1>
-            <h4>(login)</h4>
-        </div>
-        <div class="base">
-            <h3>Identificate</h3>
-            <form action="/action_page.php">
-                <label for="nombre">Nombre</label><br>
-                <input type="text" id="nombre" name="nombre"><br><br>
-
-                <label for="apellido">Apellido</label><br>
-                <input type="text" id="apellido" name="apellido"><br><br>
-
-            </form>
-
-            <a href="./chat.html"><button id="erase-task">login</button></a>
-            <hr>
-            <a href="./register.html">¿No tienes usuario? ¡Registrate!</a>
-        </div>
-        <script type="text/javascript" src="../Js/loginscript.js"></script>
-    </body>
-</body>
-
-</html>
-
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+			integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+			crossorigin="anonymous"
+		/>
+		<link rel="stylesheet" href="css/style.css" />
+		<title>Whassup!</title>
+	</head>
 	<body>
 		<div class="join-container">
 			<header class="join-header">
-				<h1><i class="titulo"></i> Whassup!</h1>
+				<h1><i class="fas fa-smile"></i> Whassup!</h1>
 			</header>
 			<main class="join-main">
 				<form action="chat.html">
@@ -63,24 +27,22 @@
 							type="text"
 							name="username"
 							id="username"
-							placeholder="Entra un usuario..."
+							placeholder="Enter username..."
 							required
 						/>
 					</div>
-
-                    <div class="form-control">
-						<label for="password">Contraseña</label>
+					<div class="form-control">
+						<label for="username">Contraseña</label>
 						<input
 							type="text"
 							name="password"
 							id="password"
-							placeholder="Entra una contraseña..."
+							placeholder="Enter password..."
 							required
 						/>
 					</div>
-
 					<div class="form-control">
-						<label for="room">Room</label>
+						<label for="room">Salas:</label>
 						<select name="room" id="room">
 							<option value="Sala 1">Sala 1</option>
 							<option value="Sala 2">Sala 2</option>
@@ -92,9 +54,8 @@
 					</div>
 					<button type="submit" class="btn">Unirse al chat</button>
 				</form>
-                <p class="href"><a href="./register.html">¿No tienes usuario? ¡Registrate!</a></p>
+				<p class="href"><a href="./register.html">¿No tienes usuario? ¡Registrate!</a></p>
 			</main>
 		</div>
-        <script type="text/javascript" src="../Js/loginscript.js"></script>
 	</body>
 </html>

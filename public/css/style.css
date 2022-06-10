@@ -124,37 +124,6 @@ a {
 	flex: 1;
 }
 
-/* Diego 
-
-.cabecero {
-    padding: 10px;
-    width: 50%;
-    text-align: center;
-    height: 100px;
-    text-align: center;
-    background-color: rgb(14, 70, 255);
-    border: 2px solid black;
-    color: white;
-}
-
-.base {
-    text-align: center;
-    border: 2px solid black;
-    padding: 10px;
-    width: 50%;
-}
-
-.cajas {
-    position: relative;
-    top: 60px;
-    left: 340px;
-}
-
-button {
-    color: blue;
-    background-color: lightblue;
-}
-
 
 /* Join Page */
 .join-container {
@@ -206,4 +175,12 @@ button {
 .join-main .btn {
 	margin-top: 20px;
 	width: 100%;
+}
+
+.href{
+	font-size: 17px;
+	padding-top: 5%;
+	text-align: center;
+	text-decoration: underline;
+	
 }
